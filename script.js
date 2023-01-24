@@ -19,7 +19,7 @@ function createGrid(cellNum) {
     for (let i = 0; i < cellNum * cellNum; i++) {
         const div = document.createElement("div");
         div.addEventListener("mouseover", function() {
-            div.style.backgroundColor = `black`
+            div.style.backgroundColor = `rgb(${getRandomNum()}, ${getRandomNum()}, ${getRandomNum()})`
         });
         container.appendChild(div);
     }
@@ -29,6 +29,11 @@ function createGrid(cellNum) {
 
 function resetCanvas() {
     container.innerHTML = '';
+}
+
+function getRandomNum() {
+    const randomNumber = Math.floor(Math.random() * 256);
+    return randomNumber;
 }
 
 
